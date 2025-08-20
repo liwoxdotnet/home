@@ -3,7 +3,12 @@ name: Deploy Astro site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change to your pages branch if different
+      - main
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
@@ -26,6 +31,4 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: withastro/action@v2
         with:
-          deploy_branch: gh-pages  # or your target pages branch
-          # Optional: custom build dir
-          # build_dir: ./dist
+          deploy_branch: gh-pages
