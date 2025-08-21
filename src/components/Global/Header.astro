@@ -2,17 +2,22 @@
 import Navigation from "./Navigation.astro";
 ---
 
+// To use your new logo image, save it to your public directory (e.g., /public/logo.png).
+// Adjust the src path below if it's different (e.g., /assets/liwox-logo.png).
+
 <header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md shadow-sm">
   <div class="container flex items-center justify-between h-20">
-    <a href="/" class="text-2xl font-bold text-gray-900 font-serif flex items-center group">
+    <a href="/" class="text-2xl font-bold text-primary-800 font-serif flex items-center">
       <span class="sr-only">LiwoxDotNet</span>
-      <!-- Cosmic Dot -->
-      <span class="inline-block w-3 h-3 bg-blue-600 rounded-full mr-3 
-                   group-hover:shadow-lg group-hover:shadow-blue-500/50 
-                   transition-shadow duration-300 
-                   animate-pulse">
-      </span>
-      <span class="text-gray-900">LiwoxDotNet</span>
+      <img
+        src="/logo.png"
+        alt="Liwox Logo"
+        class="h-12 w-auto mr-2"
+        style="max-height: 3rem;"
+        loading="lazy"
+        decoding="async"
+      />
+      <span class="text-primary-800">LiwoxDotNet</span>
     </a>
     
     <Navigation />
