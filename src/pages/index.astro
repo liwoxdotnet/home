@@ -232,28 +232,90 @@ import Button from "../components/UI/Button.astro";
     </div>
   </section>
   
-  <!-- Call to Action -->
-  <section 
-    class="py-20 bg-cover bg-center text-white"
-    style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/uploads/thank-you-bg.webp)"
-  >
-    <div class="container">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Join Our Community?</h2>
-        <p class="text-xl mb-8">
-          We'd love to welcome you to our church family. Come visit us this Sunday or reach out with any questions.
-        </p>
-        
-        <div class="flex flex-wrap justify-center gap-4">
-          <Button href="/im-new" variant="primary" size="lg">
-            I'm New Here
-          </Button>
-          
-          <Button href="/contact" variant="outline" size="lg" class="bg-white/10 text-white border-white hover:bg-white hover:text-gray-900 backdrop-blur-sm">
-            Contact Us
+
+
+
+
+  
+
+<!-- Newsletter Signup (LiwoxDotNet + LinkedIn) -->
+<section id="newsletter" class="py-16 bg-[#0A0A0F]">
+  <div class="container">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4 text-white">Join the LiwoxDotNet Newsletter</h2>
+      <p class="text-lg text-gray-300 mb-8">
+        Weekly insights on <span class="text-[#2D7FF9]">DevOps</span>, 
+        <span class="text-[#00FF85]">Forex</span>, and 
+        <span class="text-[#2D7FF9]">Smart Architecture</span> — build with code, capital, and concrete.
+      </p>
+
+      <!-- Primary: site email signup -->
+      <form id="newsletter-form" class="max-w-md mx-auto">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <input 
+            type="email" 
+            id="newsletter-email" 
+            placeholder="Enter your email address" 
+            required
+            class="flex-grow px-4 py-3 border border-gray-600 rounded-md bg-white/5 text-white placeholder-gray-400 focus:ring-[#2D7FF9] focus:border-[#2D7FF9]"
+          />
+
+          <!-- Keep your theme Button component to avoid breakage -->
+          <Button type="submit" variant="primary">
+            Join the Movement
           </Button>
         </div>
+        <p class="text-sm text-gray-400 mt-3">
+          No spam. Unsubscribe anytime.
+        </p>
+      </form>
+
+      <!-- Secondary: LinkedIn newsletter subscribe -->
+      <div class="mt-6 flex items-center justify-center">
+        <a
+          class="libutton"
+          href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7365469390676410368"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Subscribe on LinkedIn"
+        >
+          Subscribe on LinkedIn
+        </a>
       </div>
+
+      <!-- Inline style for your LinkedIn button (scoped to this section) -->
+      <style>
+        .libutton {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 7px;
+          text-align: center;
+          outline: none;
+          text-decoration: none !important;
+          color: #ffffff !important;
+          width: 220px;
+          height: 40px;
+          border-radius: 20px;
+          background-color: #0A66C2;
+          font-family: "SF Pro Text", Helvetica, sans-serif;
+          font-weight: 600;
+        }
+      </style>
+
+      <script>
+        // Handle local newsletter form submission (placeholder UX)
+        document.getElementById('newsletter-form')?.addEventListener('submit', function (e) {
+          e.preventDefault();
+          // TODO: integrate with your provider (Formspree/MailerLite/ConvertKit, etc.)
+          alert('✅ Thanks for joining LiwoxDotNet! Check your inbox to confirm.');
+          this.reset();
+        });
+      </script>
     </div>
-  </section>
+  </div>
+</section>
+
+
+  
 </BaseLayout>
