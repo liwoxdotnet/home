@@ -5,15 +5,15 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com', // Replace with your site URL
+  site: 'https://liwox.net', // ✅ Clean URL
   integrations: [
-    tailwind(),
-    sitemap(),
+    tailwind(),   // ✅ Enable Tailwind
+    sitemap(),    // ✅ Generate sitemap.xml
   ],
   markdown: {
     shikiConfig: {
-      theme: 'github-light',
-      wrap: true
+      theme: 'github-dark',  // ✅ Use dark theme to match Blackhole
+      wrap: true             // ✅ Wrap long lines
     }
   }
 });
