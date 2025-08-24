@@ -12,7 +12,7 @@ export default defineConfig({
   ],
   markdown: {
     shikiConfig: {
-      theme: 'github-dark',  // ✅ Use dark theme to match Blackhole
+      theme: 'github-light',  // ✅ Use dark theme to match Blackhole
       wrap: true             // ✅ Wrap long lines
     }
   }
